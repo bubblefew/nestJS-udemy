@@ -8,14 +8,18 @@ import {
   Query,
   Param,
   Body,
+  ParseIntPipe,
+  DefaultValuePipe,
 } from '@nestjs/common';
 
 @Controller('users')
 export class UsersController {
   @Get(':id/:optional?')
-  public getUsers(@Param() params: any, @Query() query: any) {
-    console.log(params);
-    console.log(query);
+  public getUsers(
+    @Param('id', ParseIntPipe) id: number | undefined,
+    @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number,
+    @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number,
+  ) {
     return 'Get all users';
   }
 
