@@ -13,13 +13,13 @@ export class CreateUserDto {
   @IsNotEmpty()
   @MinLength(3)
   @MaxLength(96)
-  fistname: string;
+  firstName: string;
 
   @IsString()
   @IsOptional()
   @MinLength(3)
   @MaxLength(96)
-  lastname?: string;
+  lastName?: string;
 
   @IsEmail()
   @IsNotEmpty()
@@ -28,9 +28,9 @@ export class CreateUserDto {
   @IsString()
   @IsNotEmpty()
   @MinLength(8)
-  @Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/, {
+  @Matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/, {
     message:
-      'Minimum eight characters, at least one uppercase letter, one lowercase letter and one number',
+      'Minimum eight characters, at least one letter, one number and one special character',
   })
   password: string;
 }
