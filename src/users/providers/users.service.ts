@@ -19,4 +19,12 @@ export class UsersService {
       },
     ];
   }
+
+  public findOneById(id: number) {
+    return {
+      id: 123,
+      firstName: 'John',
+      email: 'sajilasak@chg.co.th',
+    };
+  }
 }
