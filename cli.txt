@@ -1,0 +1,3 @@
+nest g module $name --no-spec --dry-run
+nest g controller $name --no-spec --dry-run
+nest g service $name/$name/$name --flat --no-spec --dry-run
