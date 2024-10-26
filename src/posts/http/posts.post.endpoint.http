@@ -1,0 +1,18 @@
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+  "title": "My first post",
+  "postType": "post",
+  "slug": "my-first-post",
+  "status": "draft",
+  "content": "This is my first post",
+  "schema":"{\r\n \"@context\": \"http://schema.org\",\r\n \"@type\": \"BlogPosting\",\r\n \"headline\": \"My first post\",\r\n \"datePublished\": \"2021-07-01T00:00:00Z\",\r\n \"articleBody\": \"This is my first post\"\r\n}",
+  "featuredImageUrl": "https://via.placeholder.com/150",
+  "publishOn": "2021-07-01T00:00:00Z",
+  "tags": ["nestjs", "nestjs-intro", "nestjs-http"],
+  "metaOptions": [{
+   "key": "value",
+   "value": 20
+  }]
+}
