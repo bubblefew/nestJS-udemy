@@ -14,7 +14,7 @@ import {
 } from 'class-validator';
 import { postStatus } from '../enums/postStatus.enum';
 import { postType } from '../enums/postType.enum';
-import { CreteaPostMetaOptionDto } from './create-post-meta-option.dto';
+import { CreteaPostMetaOptionDto } from '../../meta-options/dtos/create-post-meta-option.dto';
 import { Type } from 'class-transformer';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
@@ -92,7 +92,7 @@ export class CreatePostDto {
   })
   @IsISO8601()
   @IsOptional()
-  publishOn?: Date; 
+  publishOn?: Date;
 
   @ApiPropertyOptional({
     description: 'The tags of the post',
