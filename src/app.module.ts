@@ -19,7 +19,8 @@ import { MetaOptionsModule } from './meta-options/meta-options.module';
       inject: [], // inject the configuration provided by the module
       useFactory: () => ({
         type: 'postgres',
-        entities: [User],
+        // entities: [User],
+        autoLoadEntities: true,
         synchronize: true, // for development only - automatically syncs the database
         port: 5432,
         username: 'postgres',
