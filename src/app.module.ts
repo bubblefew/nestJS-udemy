@@ -18,7 +18,7 @@ import { User } from './users/user.entity';
       useFactory: () => ({
         type: 'postgres',
         entities: [User],
-        synchronize: true, // for development only
+        synchronize: true, // for development only - automatically syncs the database
         port: 5432,
         username: 'postgres',
         password: 'mysecretpassword',
