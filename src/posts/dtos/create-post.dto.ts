@@ -8,6 +8,7 @@ import {
   IsString,
   IsUrl,
   Matches,
+  MaxLength,
   MinLength,
   ValidateNested,
 } from 'class-validator';
@@ -23,7 +24,8 @@ export class CreatePostDto {
     description: 'The title of the post',
   })
   @IsString()
-  @MinLength(5)
+  @MinLength(4)
+  @MaxLength(512)
   @IsNotEmpty()
   title: string;
 
@@ -42,6 +44,7 @@ export class CreatePostDto {
   })
   @IsString()
   @IsNotEmpty()
+  @MaxLength(256)
   @Matches(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, {
     message:
       'A slug should be a lowercase string with hyphens and without spaces. For example, "my-first-post"',
@@ -79,6 +82,7 @@ export class CreatePostDto {
     example: 'https://example.com/my-first-post.jpg',
   })
   @IsOptional()
+  @MaxLength(1024)
   @IsUrl()
   featuredImageUrl?: string;
 
@@ -88,7 +92,7 @@ export class CreatePostDto {
   })
   @IsISO8601()
   @IsOptional()
-  publishOn?: Date;
+  publishOn?: Date; 
 
   @ApiPropertyOptional({
     description: 'The tags of the post',
