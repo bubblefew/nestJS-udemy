@@ -1,7 +1,9 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
 import { GetUserParamDto } from './../dtos/get-user-param.dto';
 import { AuthService } from './../../auth/providers/auth.service';
-
+/**
+ * Class to connect to users table and perform CRUD operations
+ */
 @Injectable()
 export class UsersService {
   constructor(
@@ -29,7 +31,9 @@ export class UsersService {
       },
     ];
   }
-
+  /**
+   * Find user by id
+   */
   public findOneById(id: String) {
     return {
       id: 123,
