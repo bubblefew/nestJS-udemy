@@ -72,6 +72,7 @@ export class Post {
 
   @OneToOne(() => MetaOption, {
     cascade: true, // or ['insert', 'update']
+    eager: true, // load the metaOptions when loading the post
   })
   @JoinColumn()
   metaOptions?: MetaOption;
