@@ -4,7 +4,8 @@ pipeline {
         stage('Build docker images'){
             steps{
                 script{
-                    ehco '1'
+                    ehco '1: hello world'
+                    echo '2: Building Docker images'
                 }
             }
         }
