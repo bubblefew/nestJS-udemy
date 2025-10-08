@@ -1,0 +1,37 @@
+Username = jilasak
+Password = jenkins123
+
+
+Step by step guide to install Jenkins on a Linux server:
+1.docker pull jenkins/jenkins:lts
+2.docker run -d -p 8080:8080 -p 50000:50000 --name jenkins jenkins/jenkins:lts
+3.docker exec -it jenkins bash
+4.cat /var/jenkins_home/secrets/initialAdminPassword
+5.Open a web browser and go to http://<your-server-ip>:8080
+6.Enter the initial admin password from step 4.
+7.Follow the setup wizard to install suggested plugins and create an admin user.
+// Note: Replace <your-server-ip> with the actual IP address of your server.
+// After installation, you can access Jenkins at http://<your-server-ip>:8080
+
+Step for set github webhook:
+1. Go to your GitHub repository.
+2. Click on "Settings" in the repository menu.
+3. Click on "Webhooks" in the left sidebar.
+4. Click on "Add webhook".
+5. In the "Payload URL" field, enter your Jenkins server URL followed by `/github-webhook/` (e.g., `http://<your-server-ip>:8080/github-webhook/`).
+6. Set the "Content type" to `application/json`.
+7. Choose the events you want to trigger the webhook (e.g., "Just the push event").
+8. Click "Add webhook" to save it.
+// Note: Replace <your-server-ip> with the actual IP address of your server.
+// After setting up the webhook, Jenkins will automatically trigger builds when changes are pushed to the GitHub repository.
+
+Step for create a Jenkins pipeline with github webhook:
+1. Open Jenkins in your web browser at http://<your-server-ip>:8080.
+2. Click on "New Item" in the left sidebar.
+3. Enter a name for your pipeline and select "Pipeline" as the item type.
+4. Click "OK" to create the pipeline.
+5. In the pipeline configuration page, scroll down to the "Pipeline" section.
+6. In the "Definition" dropdown, select "Pipeline script from SCM".
+7. In the "SCM" dropdown, select "Git".
+8. In the "Repository URL" field, enter the URL of your GitHub repository.
+
