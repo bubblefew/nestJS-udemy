@@ -24,8 +24,8 @@ import { MetaOptionsModule } from './meta-options/meta-options.module';
         synchronize: true, // for development only - automatically syncs the database
         port: 5432,
         username: 'postgres',
-        password: 'mysecretpassword',
-        host: 'localhost',
+        password: 'postgres',
+        host: 'postgres',
         database: 'nestjs-blog',
       }),
     }),

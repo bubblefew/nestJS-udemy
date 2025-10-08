@@ -1,3 +1,26 @@
 nest g module $name --no-spec --dry-run
 nest g controller $name --no-spec --dry-run
+<<<<<<< Updated upstream
 nest g service $name/$name/$name --flat --no-spec --dry-run
+=======
+nest g service $name/$name/$name --flat --no-spec --dry-run
+nest g resource $name --no-spec --flat --no-interactive --dry-run
+
+
+
+-- postgresql --
+-- how to volume data in docker --
+1. Create a directory on your host machine to store the data, e.g., `./postgres-data`.
+
+
+1. init db with docker 
+docker run --name postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
+--- PowerShell ---
+docker run --name postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -v ${PWD}\postgres-data:/var/lib/postgresql/data -d postgres
+2. create db
+docker exec -it postgres psql -U postgres
+CREATE DATABASE nestjs;
+3. connect to db
+docker exec -it postgres psql -U postgres -d nestjs
+
+>>>>>>> Stashed changes
