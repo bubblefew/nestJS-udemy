@@ -2,8 +2,11 @@ nest g module $name --no-spec --dry-run
 nest g controller $name --no-spec --dry-run
 <<<<<<< Updated upstream
 nest g service $name/$name/$name --flat --no-spec --dry-run
+<<<<<<< Updated upstream
 =======
 nest g service $name/$name/$name --flat --no-spec --dry-run
+=======
+>>>>>>> Stashed changes
 nest g resource $name --no-spec --flat --no-interactive --dry-run
 
 
@@ -23,4 +26,7 @@ CREATE DATABASE nestjs;
 3. connect to db
 docker exec -it postgres psql -U postgres -d nestjs
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
